@@ -1,23 +1,35 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import "./form.css"
 
-function Form() {
-    const handleForm = (e) => {
-        e.preventDefault();
+function Form( {addContact , contacts} ) {
+const DefaultFormValue = { fullname : "" , phone : ""}
+const [form,setForm] = useState(DefaultFormValue)
+
+useEffect(() => {
+    setForm(DefaultFormValue);
+}, [contacts])
+
+const onSubmit = (e) => {
+    e.preventDefault();
+    if(form.fullname === "" || form.phone === ""){
+        return false
     }
-    
-    const [contacts, setContats] = useState([]);
+    addContact([...contacts , form])    
+}
 
+const handleForm = (e) => {
+    setForm({...form , [e.target.name] : e.target.value})
+}    
   return (
     <>
-        <form action="">
+        <form onSubmit={onSubmit} action="" className='form-control'>
             <div className="input-box">
-                <label htmlFor="name">Full Name</label>
-                <input id='name' type="text" placeholder='Full Name'/>
+                <input name='fullname' value={form.fullname} id='name' type="text" placeholder='Full Name' onChange={handleForm}/>
             </div>
             <div className="input-box">
-                <input id='phone' type="text" placeholder='Phone Number' />
+                <input name='phone' id='phone' value={form.phone} type="text" placeholder='Phone Number' onChange={handleForm}/>
             </div>
-            <button onClick={handleForm} className='btn'>Add Contact</button>
+            <button className='btn'>Add Contact</button>
         </form>
     </>
   )
