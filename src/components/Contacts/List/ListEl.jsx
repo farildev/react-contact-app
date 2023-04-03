@@ -13,7 +13,10 @@ function ListEl({ contacts })  {
       </div>
       <ul className="list__box">
         {contacts.map((contact,index) => 
-        (<li className='list__item' key={index}>{contact.fullname}</li>))
+        (<li className='list__item' key={index}>
+          <span>{contact.fullname}</span>
+          <span>{contact.phone}</span>
+        </li>))
         }
       </ul>
     </div>
