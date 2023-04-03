@@ -1,6 +1,11 @@
 import React  from 'react'
 import "./list.css"
-function ListEl({ contacts }) {
+function ListEl({ contacts })  {
+
+  //Contacts propsu vasitəsilə contact dəyərlərini parent elementdən alıb list componentində view-a çıxardırıq.(Arraylar üçün map metodu)
+  //Contacts map edildikdə hər döngüdə bizə bir contact elementi qaytarır.
+  //Bu elementi li etiketi içərisində ekrana yazdırırıq və onun indexini key olaraq mənimsədirik.
+
   return (
     <div className='list'>
       <div className="list__header">
