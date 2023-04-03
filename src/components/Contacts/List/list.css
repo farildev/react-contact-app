@@ -16,6 +16,20 @@
     overflow-y: scroll;
 }
 
+.filter{
+    width: 100%;
+    margin-top: 15px;
+}
+.filter input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #121212;
+    border-radius: 5px;
+    color: #fff;
+}
+
 .list__item{
     background-color: #242323;
     padding: 10px;
