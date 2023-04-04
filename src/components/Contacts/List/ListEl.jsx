@@ -3,7 +3,7 @@ import "./list.css"
 function ListEl({ contacts })  {
 
   const [filterText , setFilterText] = useState('');
-
+  //Contactları bu hissədən filter edə bilirik.
   const filtered = contacts.filter((item) => {
     return Object.keys(item).some((key) => 
     item[key]

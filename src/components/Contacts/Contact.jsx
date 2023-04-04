@@ -4,7 +4,7 @@ import List from "../Contacts/List/ListEl"
 import "./contact.css"
 const Contact = () => {
   const [contacts, setContacts] = useState([]); // Form dəyərlərini contact arrayinin içərisini mənimsədirik və burada saxlayırıq.
-
+  
   return (
     <div className='contact'>
         <div className="contact__header">
